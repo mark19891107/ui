@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="big">
+        <div class="title">
+            Minibot
+            <button class="minimize" onclick="mini()">-</button>
+            <button class="maximize" onclick="max()">+</button>
+        </div>
+        <div class="body">
+            <div class="bot">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting
+            </div>
+            <div class="user">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text
+            </div>
+            <div class="bot">
+                Lorem Ipsum is simply dummy text o when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting
+            </div>
+            <div class="user">
+                Lorem Ipsum is simply dummy t has survived not only five centuries, but also the leap
+                into electronic typesetting
+            </div>
+            <div class="bot">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text e
+            </div>
+            <div class="user">
+                OK
+            </div>
+            <div class="bot">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text e
+            </div>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="type here...">
+            <button>></button>
+        </div>
+    </div>
+    <script>
+        function mini(){
+            document.getElementsByClassName("big")[0].classList = "big mini"
+        }
+        function max(){
+            document.getElementsByClassName("big")[0].classList = "big"
+        }
+    </script>
+    <style>
+        .big {
+            background-color: white;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            height: calc(100vh - 20px);
+            width: 500px;
+            box-shadow: 0px 0px 20px 6px #32323233;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.5s ease;
+        }
+
+        .title {
+            background-color: #1b53d0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 10px 15px;
+            color: white;
+            font-family: system-ui;
+            font-size: larger;
+            font-weight: 900;
+            letter-spacing: 2px;
+            transition: all 0.5s ease;
+        }
+
+        .body {
+            flex: 1;
+            background: #F4F4F4;
+            border-bottom: 2px solid #d3d3d329;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            transition: all 0.5s ease;
+        }
+
+        .bot {
+            max-width: 70%;
+            margin: 10px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: black;
+            font-family: system-ui;
+        }
+
+        .user {
+            max-width: 70%;
+            margin: 10px;
+            background: #1b53d0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            font-family: system-ui;
+            text-align: left;
+            margin-left: auto;
+        }
+
+        .input {
+            padding: 10px;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .input input {
+            border: none;
+            flex: 1
+        }
+
+        .input button {
+            float: right;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .mini .body{
+            height: 0px;
+        }
+
+        .mini .input{
+            height: 0px;
+            padding: 0px;
+        }
+
+        .mini.big{
+            height: 10px;
+            width: 200px;
+            top: calc(100vh - 50px);
+        }
+
+        .mini .minimize{
+            display: none;
+        }
+
+        .big .maximize{
+            display: none;
+        }
+
+        .mini.big .maximize{
+            display: inline;
+        }
+    </style>
+</body>
+
+</html>
